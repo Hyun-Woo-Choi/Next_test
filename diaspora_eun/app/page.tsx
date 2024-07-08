@@ -1,8 +1,10 @@
-import Link from "next/link";
+import NavigationBar from './navigationBar';
 
 export default function Page() {
   return (
-    <Link href="/blurbs">Blurbs</Link>
-    // <h1> This is the main page </h1>
+    <>
+      <NavigationBar />
+      <h1> This is the main page </h1>
+    </>
   );
 }
