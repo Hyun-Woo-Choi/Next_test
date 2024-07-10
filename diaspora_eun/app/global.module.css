@@ -1,3 +1,12 @@
-.navigation_bar {
-    padding: 24px;
+.title_texts {
+    font-size: 40px;
+    color: #333;
+    font-family: 'Rubik',sans-serif;
+    text-align: center;
+}
+
+.small_texts {
+    font-size: 20px;
+    color: #666;
+    font-family: 'DM Sans', sans-serif;
 }

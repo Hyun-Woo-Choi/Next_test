@@ -1,6 +1,6 @@
 /* NavigationBar.module.css */
 .navbar {
-  background-color: #333;
+  background-color: #941120;
   overflow: hidden;
 }
 
@@ -20,6 +20,7 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: 'Rubik', sans-serif;
 }
 
 .navLink:hover {

@@ -18,7 +18,7 @@ const NavigationBar = () => {
         </li>
         <li className={styles.navItem}>
           <Link href="/database" className={styles.navLink}>
-            Data Sheet
+            Database
           </Link>
         </li>
         <li className={styles.navItem}>
