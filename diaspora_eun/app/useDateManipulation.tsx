@@ -11,7 +11,7 @@ interface BookData {
   Original_Title: string;
   Translated_By: string;
   Korean_Publisher: string;
-  Korean_Edition_Publication_Date: Date;
+  Korean_Edition_Publication_Date: Date | string;
   Original_Publication_Year: number;
   Genre_1: string;
   Genre_2: string;
@@ -23,33 +23,78 @@ interface BookData {
 }
 
 const useYearlyBookCounts = () => {
-  const [publicationDateCounts, setPublicationDateCounts] = useState<{ [year: string]: number }>({});
+  const [koreanPublicationDateCounts, setKoreanPublicationDateCounts] = useState<{ [year: string]: number }>({});
   const [originalPublicationDateCounts, setOriginalPublicationDateCounts] = useState<{ [year: string]: number }>({});
+  const [isKoreanHeritage, setIsKoreanHeritage] = useState<{ [year: string]: number }>({});
 
   useEffect(() => {
-    const pubDateCounts: { [year: string]: number } = {};
+    const koreanPubDateCounts: { [year: string]: number } = {};
     const origPubDateCounts: { [year: string]: number } = {};
+    const isKoreanHeritage: { [year: string]: number } = {};
 
     (rawBookData as BookData[]).forEach(row => {
       // Count for publication date
-      const publicationYear = new Date(row.Korean_Edition_Publication_Date).getFullYear().toString();
-      if (publicationYear) {
-        pubDateCounts[publicationYear] = (pubDateCounts[publicationYear] || 0) + 1;
+      const KoreanPublicationYear = new Date(row.Korean_Edition_Publication_Date).getFullYear().toString();
+
+      if (KoreanPublicationYear) {
+        koreanPubDateCounts[KoreanPublicationYear] = (koreanPubDateCounts[KoreanPublicationYear] || 0) + 1;
       }
 
       // Assuming you want to count authors of Korean ethnicity based on the Korean edition publication year
       if (row.Authors_of_Korean_Ethnicity === "Yes") {
-        origPubDateCounts[publicationYear] = (origPubDateCounts[publicationYear] || 0) + 1;
+        isKoreanHeritage[KoreanPublicationYear] = (isKoreanHeritage[KoreanPublicationYear] || 0) + 1;
       }
+
+      // Count for original publication date
+      if (row.Original_Publication_Year) {
+        origPubDateCounts[row.Original_Publication_Year.toString()] = (origPubDateCounts[row.Original_Publication_Year.toString()] || 0) + 1;
+      }
+
     });
 
     // Update state with the counted values
-    setPublicationDateCounts(pubDateCounts);
+    setKoreanPublicationDateCounts(koreanPubDateCounts);
     setOriginalPublicationDateCounts(origPubDateCounts);
+    setIsKoreanHeritage(isKoreanHeritage);
   }, []); // Ensure this effect runs only once on component mount
 
   // Return counts or use them as needed within this hook
-  return { publicationDateCounts, originalPublicationDateCounts };
+  return { koreanPublicationDateCounts, originalPublicationDateCounts, isKoreanHeritage };
 };
 
-export default useYearlyBookCounts;
+const useKoreanPublication_KoreanHeritageCounts = () => {
+  const [koreanPublicationCharts, setKoreanPublicationCharts] = useState<{ [year: string]: {
+    koreanPublicationCount: number;
+    koreanHeritageCount: number;
+   }}>({});
+
+   useEffect(() => {
+    const koreanPublicationChartsUpdate: { [year: string]: {
+      koreanPublicationCount: number;
+      koreanHeritageCount: number;
+    }} = {};
+  
+    (rawBookData as BookData[]).forEach(row => {
+      const KoreanPublicationYear = new Date(row.Korean_Edition_Publication_Date).getFullYear().toString();
+  
+      // Initialize the year if it doesn't exist
+      if (!koreanPublicationChartsUpdate[KoreanPublicationYear]) {
+        koreanPublicationChartsUpdate[KoreanPublicationYear] = { koreanPublicationCount: 0, koreanHeritageCount: 0 };
+      }
+  
+      // Increment koreanPublicationCount for every book
+      koreanPublicationChartsUpdate[KoreanPublicationYear].koreanPublicationCount += 1;
+  
+      // Increment koreanHeritageCount only if the author is of Korean ethnicity
+      if (row.Authors_of_Korean_Ethnicity === "Yes") {
+        koreanPublicationChartsUpdate[KoreanPublicationYear].koreanHeritageCount += 1;
+      }
+    });
+  
+    setKoreanPublicationCharts(koreanPublicationChartsUpdate);
+  }, []);
+
+  return koreanPublicationCharts;
+}
+
+export {useYearlyBookCounts, useKoreanPublication_KoreanHeritageCounts };
