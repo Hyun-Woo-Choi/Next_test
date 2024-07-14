@@ -1,6 +1,5 @@
 import styles from './global.module.css';
-import Head from 'next/head';
-
+import BookCountsLineChart from './bookCountsLineChart';
 export default function Page() {
   return (
     <>
@@ -18,6 +17,7 @@ export default function Page() {
         other textual advertisements that are used to promote books in
         the Korean book market.
       </p>
+      <BookCountsLineChart/>
     </>
   );
 }
