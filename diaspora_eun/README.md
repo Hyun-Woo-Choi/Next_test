@@ -2,8 +2,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
 
+First, need to install npm files 
+```bash
+npm instlal 
+yarn add 
+```
+
+second, run the development server:
 ```bash
 npm run dev
 # or
@@ -12,6 +18,12 @@ yarn dev
 pnpm dev
 # or
 bun dev
+
+```
+
+if having toruble for opening database page, saying that some module ars missing it might be due to grid 
+```bash
+npm install @mui/x-data-grid
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
