@@ -14,6 +14,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  ReferenceDot,
 } from 'recharts';
 import { Typography } from '@mui/material';
 import { grey } from '@mui/material/colors';
@@ -71,6 +72,13 @@ const BookCountsLineChart = () => {
             dataKey="count"
             stroke="#1F4C4C"
             activeDot={{ r: 8 }}
+          />
+          <ReferenceDot
+            x="2020.8"
+            y={koreanPublicationDateCounts['2020']}
+            stroke={grey[500]}
+            fill={grey[500]}
+            onClick={() => alert('2020')}
           />
         </LineChart>
       </ResponsiveContainer>

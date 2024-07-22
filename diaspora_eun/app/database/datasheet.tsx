@@ -15,7 +15,7 @@ const columns: GridColDef[] = [
   {
     field: 'ISBN',
     headerName: 'ISBN',
-    width: 90,
+    width: 150,
   },
   {
     field: 'Author',
@@ -43,7 +43,8 @@ const columns: GridColDef[] = [
     width: 250,
   },
   {
-    field: 'Korean_Edition_Publication_Date',
+    // field: 'Korean_Edition_Publication_Date',
+    field: 'publicationDate',
     headerName: 'Publication Date',
     width: 150,
   },
@@ -75,6 +76,9 @@ export default function DataSheet() {
   const processedRows = rawBookData.map((row, index) => ({
     ...row,
     id: index, // Assign the index as a unique ID
+    publicationDate: new Date(row.Korean_Edition_Publication_Date)
+      .toISOString()
+      .split('T')[0],
   }));
 
   // Update getRowId to return this unique 'id'
@@ -83,6 +87,7 @@ export default function DataSheet() {
     <div>
       <DataGrid
         rows={processedRows}
+        rowHeight={50}
         columns={columns}
         initialState={{
           pagination: {
