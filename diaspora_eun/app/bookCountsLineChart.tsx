@@ -126,14 +126,14 @@ const BookCountsLineChart = () => {
         sx={{ fontStyle: 'italic', color: 'grey' }}
       >
         Omitted Data: John Cha’s 안녕, 테레사 and Ken Liu’s
-        "Altogether Elsewhere, Vast Herds of Reindeer" are excluded
-        from the above chart. For 안녕, 테레사, the author, who is an
-        English speaker, collaborated with a translator, resulting in
-        the novel existing only in Korean. For "Altogether Elsewhere,
-        Vast Herds of Reindeer," the anthology of short stories was
-        curated by the translator, who selected the stories to be
-        included. Therefore, these works do not have direct English
-        counterparts.
+        &quot;Altogether Elsewhere, Vast Herds of Reindeer&quot; are
+        excluded from the above chart. For 안녕, 테레사, the author,
+        who is an English speaker, collaborated with a translator,
+        resulting in the novel existing only in Korean. For
+        &quot;Altogether Elsewhere, Vast Herds of Reindeer,&quot; the
+        anthology of short stories was curated by the translator, who
+        selected the stories to be included. Therefore, these works do
+        not have direct English counterparts.
       </Typography>
     </div>
   );
