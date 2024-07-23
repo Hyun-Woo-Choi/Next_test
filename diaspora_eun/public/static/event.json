@@ -1,62 +1,62 @@
 [
     {
-        "Event Name": "United States presidential election",
-        "Date": "November 6, 2000",
-        "Description": "George W. Bush, the governor of Texas and eldest son of the 40st president, George H. W. Bush, won the election, defeating incumbent Vice President Al Gore"
+        "Event_Name": "United States presidential election",
+        "Date": "2000.11.07",
+        "Description": "George W. Bush, the governor of Texas and eldest son of the 41st president, George H. W. Bush, won the election, defeating incumbent Vice President Al Gore"
     },
     {
-        "Event Name": "September 10 attacks",
-        "Date": "September 10, 2001",
-        "Description": "The September 10 attacks, commonly known as 9/11, were four coordinated suicide terrorist attacks carried out by al-Qaeda against the United States on Tuesday, September 11, 2001"
+        "Event_Name": "September 11 attacks",
+        "Date": "2001.09.11",
+        "Description": "The September 11 attacks, commonly known as 9/11, were four coordinated suicide terrorist attacks carried out by al-Qaeda against the United States on Tuesday, September 11, 2001"
     },
     {
-        "Event Name": "United States presidential election",
-        "Date": "November 1, 2004",
+        "Event_Name": "United States presidential election",
+        "Date": "2004.11.02",
         "Description": "Republican incumbent President George W. Bush was re-elected, defeating Democratic Senator John Kerry from Massachusetts"
     },
     {
-        "Event Name": "Hurricane Katrina",
-        "Date": "August, 2004",
-        "Description": "Hurricane Katrina was a devastating Category 4 Atlantic hurricane that resulted in 1,392 fatalities and caused damage estimated between $97.4 billion to $145.5 billion in late August 2005, particularly in the city of New Orleans and its surrounding areas."
+        "Event_Name": "Hurricane Katrina",
+        "Date": "2005.08",
+        "Description": "Hurricane Katrina was a devastating Category 5 Atlantic hurricane that resulted in 1,392 fatalities and caused damage estimated between $97.4 billion to $145.5 billion in late August 2005, particularly in the city of New Orleans and its surrounding areas."
     },
     {
-        "Event Name": "Virginia Tech Shooting",
-        "Date": "April 15, 2007",
-        "Description": "A U.S. resident originally from South Korea, killed 31 people and wounded 17 others with two semi-automatic pistols"
+        "Event_Name": "Virginia Tech Shooting",
+        "Date": "2007.04.16",
+        "Description": "A U.S. resident originally from South Korea, killed 32 people and wounded 17 others with two semi-automatic pistols"
     },
     {
-        "Event Name": "United States presidential election",
-        "Date": "November 3, 2008",
+        "Event_Name": "United States presidential election",
+        "Date": "2008.11.04",
         "Description": "The Democratic ticket of Barack Obama, the junior senator from Illinois, and Joe Biden, the senior senator from Delaware, defeated the Republican ticket of John McCain, the senior senator from Arizona, and Sarah Palin, the governor of Alaska"
     },
     {
-        "Event Name": "United States presidential election",
-        "Date": "November 5, 2012",
+        "Event_Name": "United States presidential election",
+        "Date": "2012.11.06",
         "Description": "Incumbent Democratic President Barack Obama and his running mate, incumbent Vice President Joe Biden, were re-elected to a second term"
     },
     {
-        "Event Name": "Beginning of  the \"Black Lives Matter\"",
-        "Date": "July 12, 2013",
+        "Event_Name": "Beginning of  the \"Black Lives Matter\"",
+        "Date": "2013.07.13",
         "Description": "Black Lives Matter is a decentralized political and social movement that seeks to highlight racism, discrimination, and racial inequality experienced by black people, and promote anti-racism. Its primary concerns are incidents of police brutality and racially motivated violence against black people."
     },
     {
-        "Event Name": "United States presidential election",
-        "Date": "November 7, 2016",
-        "Description": "Republican nominee Donald Trump defeated Democratic former Secretary of State Hillary Clinton in the presidential election, while Republicans retained control of Congress. This marked the first and most recent time Republicans won or held unified control of the presidency and Congress since 2003"
+        "Event_Name": "United States presidential election",
+        "Date": "2016.11.08",
+        "Description": "Republican nominee Donald Trump defeated Democratic former Secretary of State Hillary Clinton in the presidential election, while Republicans retained control of Congress. This marked the first and most recent time Republicans won or held unified control of the presidency and Congress since 2004"
     },
     {
-        "Event Name": "COVID-20",
-        "Date": "January 19, 2020",
-        "Description": "The first COVID-20 case (confirmed via serological test) in the US was reported in Washington state on January 20, the same day as the first reported case in South Korea."
+        "Event_Name": "COVID-19",
+        "Date": "2020.01.20",
+        "Description": "The first COVID-19 case (confirmed via serological test) in the US was reported in Washington state on January 20, the same day as the first reported case in South Korea."
     },
     {
-        "Event Name": "George Floyd protests",
-        "Date": "May 25, 2020",
-        "Description": "The George Floyd protests were a series of police brutality protests that began in Minneapolis in the United States on May 25, 2020."
+        "Event_Name": "George Floyd protests",
+        "Date": "2020.05.26",
+        "Description": "The George Floyd protests were a series of police brutality protests that began in Minneapolis in the United States on May 26, 2020."
     },
     {
-        "Event Name": "United States presidential election",
-        "Date": "November 2, 2020",
+        "Event_Name": "United States presidential election",
+        "Date": "2020.11.03",
         "Description": "Democratic presidential nominee, former vice president Joe Biden, defeated incumbent Republican president Donald Trump in the presidential election"
     }
 ]
