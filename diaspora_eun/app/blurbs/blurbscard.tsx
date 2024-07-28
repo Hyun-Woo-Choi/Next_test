@@ -61,7 +61,10 @@ const BlurbCard: React.FC<BookData> = ({ book }) => {
   );
 
   try {
-    var imageUrl = require(`../static/Book_Covers_SK/${ISBN}.JPG`);
+    console.log(ISBN);
+
+    var imagePath = `../../public/static/Book_Covers_SK/${ISBN}.jpg`;
+    var imageUrl = require(imagePath);
   } catch (error) {
     // var imageUrl = require("https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-1932.jpg?w=2000&t=st=1700365885~exp=1700366485~hmac=080cf6f7e768fa2d3497b467c311e9876c103eb6794306b996db727e817a7817");
     console.log(error);

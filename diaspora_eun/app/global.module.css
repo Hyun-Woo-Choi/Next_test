@@ -10,11 +10,3 @@
     color: #666;
     font-family: 'DM Sans', sans-serif;
 }
-
-.blurbs_container  {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
