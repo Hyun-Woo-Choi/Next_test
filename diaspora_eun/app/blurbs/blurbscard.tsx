@@ -3,46 +3,22 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import Modal from '@mui/material/Modal';
-
 import { useState } from 'react';
+import { BookData } from '../types';
 
-interface BlurbCardProps {
-  ISBN: string;
-  Author_Translated: string | null;
-  Author: string;
-  Title_Translated: string | string;
-  Original_Title: string | string;
-  Translated_By: string;
-  Korean_Publisher: string;
-  Korean_Edition_Publication_Date: string;
-  Original_Publication_Year: string;
-  Genre_1: string;
-  Genre_2: string;
-  Genre_3: string | null;
-  Genre_4: string | null;
-  Genre_5: string | null;
-  Author_of_Korean_Ethnicity: string;
-  Blurb_Translated: string | null;
-}
+const BlurbCard: React.FC<BookData> = ({ book }) => {
+  const {
+    ISBN,
+    Author,
+    Original_Title,
+    Title_Translated,
+    Korean_Edition_Publication_Date,
+    Genre_1,
+    Genre_2,
+    Genre_3,
+    Genre_4,
+  } = book;
 
-const BlurbCard: React.FC<BlurbCardProps> = ({
-  ISBN,
-  Author_Translated,
-  Author,
-  Title_Translated,
-  Original_Title,
-  Translated_By,
-  Korean_Publisher,
-  Korean_Edition_Publication_Date,
-  Original_Publication_Year,
-  Genre_1,
-  Genre_2,
-  Genre_3,
-  Genre_4,
-  Genre_5,
-  Author_of_Korean_Ethnicity,
-  Blurb_Translated,
-}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleCardClick = () => {
