@@ -25,9 +25,17 @@ import eventData from '../public/static/event.json';
 
 const BookCountsLineChart = () => {
   const [open, setOpen] = useState(false);
-  const [modalContent, setModalContent] = useState('');
+  const [modalContent, setModalContent] = useState({
+    Event_Name: '',
+    Date: '',
+    Description: '',
+  });
 
-  const handleOpen = (description: string) => {
+  const handleOpen = (description: {
+    Event_Name: string;
+    Date: string;
+    Description: string;
+  }) => {
     setModalContent(description);
     setOpen(true);
   };
