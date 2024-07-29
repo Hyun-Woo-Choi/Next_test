@@ -5,6 +5,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Modal from '@mui/material/Modal';
 import { useState } from 'react';
 import { BookData } from '../types';
+import styles from './blurbs.module.css';
+import Image from 'next/image';
 
 const BlurbCard: React.FC<BookData> = ({ book }) => {
   const {
@@ -59,24 +61,23 @@ const BlurbCard: React.FC<BookData> = ({ book }) => {
       </Typography>
     </div>
   );
-
-  try {
-    console.log(ISBN);
-
-    var imagePath = `../../public/static/Book_Covers_SK/${ISBN}.jpg`;
-    var imageUrl = require(imagePath);
-  } catch (error) {
-    // var imageUrl = require("https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-1932.jpg?w=2000&t=st=1700365885~exp=1700366485~hmac=080cf6f7e768fa2d3497b467c311e9876c103eb6794306b996db727e817a7817");
-    console.log(error);
-  }
+  const imagePath = `/static/images/${ISBN}.jpg`;
 
   return (
-    <Card sx={{ width: 345, margin: 1 }} onClick={handleCardClick}>
-      <CardMedia
-        component="img"
+    <Card
+      className={styles.blurb_card}
+      sx={{ width: 345, margin: 1 }}
+      onClick={handleCardClick}
+    >
+      <Image
+        src={imagePath}
         alt="Book Cover"
-        height="515"
-        image={imageUrl}
+        width={345}
+        height={515}
+        onError={(e) => {
+          e.currentTarget.src =
+            'https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-1932.jpg?w=2000&t=st=1700365885~exp=1700366485~hmac=080cf6f7e768fa2d3497b467c311e9876c103eb4306b996db727e817a7817';
+        }}
       />
       <CardContent sx={{ height: 90 }}>
         <Typography gutterBottom variant="h5" component="div">
