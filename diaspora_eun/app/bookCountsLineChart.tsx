@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useState } from 'react';
 import {
   useYearlyBookCounts,
   useKoreanPublication_KoreanHeritageCounts,
@@ -16,11 +17,22 @@ import {
   ResponsiveContainer,
   ReferenceDot,
 } from 'recharts';
-import { Typography } from '@mui/material';
+import { Typography, Modal, Box } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import { Noto_Sans_Old_Italic, Roboto } from 'next/font/google';
 
+import eventData from '../public/static/event.json';
+
 const BookCountsLineChart = () => {
+  const [open, setOpen] = useState(false);
+  const [modalContent, setModalContent] = useState('');
+
+  const handleOpen = (description: string) => {
+    setModalContent(description);
+    setOpen(true);
+  };
+
+  const handleClose = () => setOpen(false);
   const {
     koreanPublicationDateCounts,
     originalPublicationDateCounts,
@@ -74,13 +86,23 @@ const BookCountsLineChart = () => {
             name="Original Publication Date Count"
             activeDot={{ r: 8 }}
           />
-          <ReferenceDot
-            x="2020.8"
-            y={koreanPublicationDateCounts['2020']}
-            stroke={grey[500]}
-            fill={grey[500]}
-            onClick={() => alert('2020')}
-          />
+          {eventData.map((event, index) => {
+            const [year, month] = event.Date.split('.');
+            return (
+              <ReferenceDot
+                key={index}
+                x={year}
+                y={
+                  originalPublicationData.find(
+                    (data) => data.year === year
+                  )?.count || 0
+                }
+                stroke={grey[100]}
+                fill={grey[300]}
+                onClick={() => handleOpen(event)}
+              />
+            );
+          })}
         </LineChart>
       </ResponsiveContainer>
       <Typography
@@ -137,6 +159,39 @@ const BookCountsLineChart = () => {
           />
         </LineChart>
       </ResponsiveContainer>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="event-description-title"
+        aria-describedby="event-description"
+      >
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: 400,
+            bgcolor: 'background.paper',
+            border: '2px solid #000',
+            boxShadow: 24,
+            p: 4,
+          }}
+        >
+          <Typography
+            id="event-description-title"
+            variant="h6"
+            component="h2"
+          >
+            {modalContent.Event_Name}
+            <br></br>
+            {modalContent.Date}
+          </Typography>
+          <Typography id="event-description" sx={{ mt: 2 }}>
+            {modalContent.Description}
+          </Typography>
+        </Box>
+      </Modal>
     </div>
   );
 };
