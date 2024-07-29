@@ -8,7 +8,11 @@ import { BookData } from '../types';
 import styles from './blurbs.module.css';
 import Image from 'next/image';
 
-const BlurbCard: React.FC<BookData> = ({ book }) => {
+interface BlurbCardProps {
+  book: BookData;
+}
+
+const BlurbCard: React.FC<BlurbCardProps> = ({ book }) => {
   const {
     ISBN,
     Author,
