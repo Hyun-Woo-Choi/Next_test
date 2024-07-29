@@ -89,12 +89,12 @@ export default function DataSheet() {
         rows={processedRows}
         rowHeight={50}
         columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 10 },
-          },
-        }}
-        pageSizeOptions={[10, 20, 50]}
+        // initialState={{
+        //   pagination: {
+        //     paginationModel: { page: 0, pageSize: 10 },
+        //   },
+        // }}
+        // pageSizeOptions={[10, 20, 50]}
       />
     </div>
     // <TableContainer component={Paper}>
