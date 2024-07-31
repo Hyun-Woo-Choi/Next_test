@@ -84,17 +84,17 @@ export default function DataSheet() {
   // Update getRowId to return this unique 'id'
 
   return (
-    <div>
+    <div style={{ height: '70vh' }}>
       <DataGrid
         rows={processedRows}
         rowHeight={50}
         columns={columns}
-        // initialState={{
-        //   pagination: {
-        //     paginationModel: { page: 0, pageSize: 10 },
-        //   },
-        // }}
-        // pageSizeOptions={[10, 20, 50]}
+        initialState={{
+          pagination: {
+            paginationModel: { page: 0, pageSize: 100 },
+          },
+        }}
+        pageSizeOptions={[100, 50, 20, 10]}
       />
     </div>
     // <TableContainer component={Paper}>
