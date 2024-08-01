@@ -65,7 +65,7 @@ const BlurbCard: React.FC<BlurbCardProps> = ({ book }) => {
       </Typography>
     </div>
   );
-  const imagePath = `/static/images/${ISBN}.jpg`;
+  const imagePath = `/static/images/${ISBN}.JPG`;
 
   return (
     <Card
