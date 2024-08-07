@@ -27,6 +27,8 @@ const BlurbCard: React.FC<BlurbCardProps> = ({ book }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const [imageSrc, setImageSrc] = useState(`/static/${ISBN}.jpg`);
+
   const handleCardClick = () => {
     setIsModalOpen(!isModalOpen);
   };
@@ -73,7 +75,8 @@ const BlurbCard: React.FC<BlurbCardProps> = ({ book }) => {
       onClick={handleCardClick}
     >
       <Image
-        src={`/static/${ISBN}.JPG`}
+        // src={`/static/${ISBN}.jpg`}
+        src={imageSrc}
         alt="Book Cover"
         width={345}
         height={515}
