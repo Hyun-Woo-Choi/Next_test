@@ -73,8 +73,7 @@ const BlurbCard: React.FC<BlurbCardProps> = ({ book }) => {
       onClick={handleCardClick}
     >
       <Image
-        // src={`/static/images/${ISBN}.JPG`}
-        src={`/static/test.JPG`}
+        src={`/static/${ISBN}.JPG`}
         alt="Book Cover"
         width={345}
         height={515}
