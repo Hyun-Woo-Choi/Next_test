@@ -81,6 +81,7 @@ const BlurbCard: React.FC<BlurbCardProps> = ({ book }) => {
           e.currentTarget.src =
             'https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-1932.jpg?w=2000&t=st=1700365885~exp=1700366485~hmac=080cf6f7e768fa2d3497b467c311e9876c103eb4306b996db727e817a7817';
         }}
+        loading="lazy"
       />
       <CardContent sx={{ height: 90 }}>
         <Typography gutterBottom variant="h5" component="div">
