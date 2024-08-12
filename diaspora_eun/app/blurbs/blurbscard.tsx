@@ -58,11 +58,11 @@ const BlurbCard: React.FC<BlurbCardProps> = ({ book }) => {
         Genre
         <hr />
         {Genre_1}
-        <hr />
-        {Genre_2},
-        <hr />
-        {Genre_3},
-        <hr />
+        {Genre_1 === '' ? '' : <hr />}
+        {Genre_2}
+        {Genre_2 === '' ? '' : <hr />}
+        {Genre_3}
+        {Genre_3 === '' ? '' : <hr />}
         {Genre_4}
       </Typography>
     </div>
